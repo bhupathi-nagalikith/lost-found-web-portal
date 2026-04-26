@@ -1,0 +1,220 @@
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.auth-shell {
+  width: min(1120px, 100%);
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(320px, 1.05fr);
+  border: 1px solid var(--border-strong);
+  border-radius: 32px;
+  overflow: hidden;
+  background: rgba(7, 17, 31, 0.78);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-shell.auth-shell-compact {
+  width: min(920px, 100%);
+  grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+}
+
+.auth-panel {
+  position: relative;
+  padding: clamp(28px, 5vw, 44px);
+}
+
+.auth-panel-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.auth-panel-brand span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #38bdf8, #f97316);
+  color: #082032;
+  font-weight: 800;
+}
+
+.auth-panel h1,
+.auth-panel p,
+.auth-panel h2,
+.auth-panel h3 {
+  margin: 0;
+}
+
+.auth-panel-copy {
+  margin-top: 28px;
+}
+
+.auth-panel-copy h1,
+.auth-panel-copy h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.auth-panel-copy p {
+  margin-top: 16px;
+  color: var(--text-secondary);
+  max-width: 48ch;
+}
+
+.auth-panel-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.auth-panel-list-item {
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.auth-panel-list-item strong,
+.auth-panel-list-item span {
+  display: block;
+}
+
+.auth-panel-list-item span {
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.auth-card {
+  padding: clamp(28px, 5vw, 44px);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.84), rgba(15, 23, 42, 0.92));
+}
+
+.auth-card-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.auth-card-header p {
+  margin: 10px 0 0;
+  color: var(--text-muted);
+}
+
+.auth-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.auth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.auth-grid-3 {
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr;
+  gap: 16px;
+}
+
+.auth-span-full {
+  grid-column: 1 / -1;
+}
+
+.auth-field {
+  display: grid;
+  gap: 8px;
+}
+
+.auth-field label {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.auth-field input,
+.auth-field textarea,
+.auth-field select {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.auth-field input::placeholder {
+  color: rgba(148, 163, 184, 0.75);
+}
+
+.auth-field input:focus,
+.auth-field textarea:focus,
+.auth-field select:focus {
+  border-color: rgba(56, 189, 248, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.auth-submit {
+  min-height: 54px;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #38bdf8, #f97316);
+  color: #082032;
+  font-weight: 800;
+}
+
+.auth-error {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(251, 113, 133, 0.14);
+  border: 1px solid rgba(251, 113, 133, 0.3);
+  color: #fecdd3;
+}
+
+.auth-footer {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.auth-footer button {
+  padding: 0;
+  margin-left: 6px;
+  background: none;
+  border: none;
+  color: #7dd3fc;
+  font-weight: 700;
+}
+
+@media (max-width: 920px) {
+  .auth-shell,
+  .auth-shell.auth-shell-compact {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .auth-page {
+    padding: 12px;
+  }
+
+  .auth-grid,
+  .auth-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
